@@ -39,9 +39,33 @@ func Response() string {
 		}
 	}
 
+	ansRecPart1 := recursionResponse(inputSlice, 2)
+	ansRecPart2 := recursionResponse(inputSlice, 3)
+
 	return fmt.Sprint(
 		"part1: ", ansPart1, "\tpart2: ", ansPart2,
+		"\t and with recursion ",
+		"part1: ", ansRecPart1, "\tpart2: ", ansRecPart2,
 	)
+}
+
+func recursionResponse(input []int, n int) (prod int) {
+	_, prod = recursion(input, 0, n, -1, 0, 1)
+	return
+}
+
+func recursion(input []int, depth, maxDepth, pvIndex, pvSum, pvProd int) (sum, prod int) {
+	if depth >= maxDepth || maxDepth <= 0 {
+		return pvSum, pvProd
+	}
+	for index := pvIndex + 1; index < len(input); index++ {
+		x := input[index]
+		sum, prod = recursion(input, depth+1, maxDepth, index, pvSum+x, pvProd*x)
+		if sum == 2020 {
+			return sum, prod
+		}
+	}
+	return 0, 0
 }
 
 func fetchInput() io.Reader {
