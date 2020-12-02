@@ -4,15 +4,18 @@ import (
 	"bufio"
 	"fmt"
 	"io"
-	"net/http"
 	"sort"
 	"strconv"
+
+	"github.com/gabrielradureaupw/adventofcode/2020/inputs"
 )
+
+const day1 = 1
 
 // Response _
 func Response() string {
 
-	inputSlice := parseIntSlice(fetchInput())
+	inputSlice := parseIntSlice(inputs.FetchInput(day1))
 	sort.IntSlice(inputSlice).Sort()
 
 	size := len(inputSlice)
@@ -66,21 +69,6 @@ func recursion(input []int, depth, maxDepth, pvIndex, pvSum, pvProd int) (sum, p
 		}
 	}
 	return 0, 0
-}
-
-func fetchInput() io.Reader {
-	const inputURL = "https://adventofcode.com/2020/day/1/input"
-	const session = "53616c7465645f5f75b77582051a3867a4aac617492d96e39cf78b7f19f6dc846df755d5472c952504abcf4ae859d161" // expires in nov 2030
-	req, _ := http.NewRequest(http.MethodGet, inputURL, nil)
-	req.AddCookie(&http.Cookie{
-		Name:  "session",
-		Value: session,
-	})
-	resp, err := http.DefaultClient.Do(req)
-	if err != nil {
-		panic(err)
-	}
-	return resp.Body
 }
 
 func parseIntSlice(input io.Reader) (slice []int) {

@@ -1,3 +1,3 @@
-module adventofcode2020
+module github.com/gabrielradureaupw/adventofcode/2020
 
 go 1.15
