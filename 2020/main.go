@@ -5,6 +5,7 @@ import (
 
 	"github.com/gabrielradureaupw/adventofcode/2020/day1"
 	"github.com/gabrielradureaupw/adventofcode/2020/day2"
+	"github.com/gabrielradureaupw/adventofcode/2020/day3"
 )
 
 func main() {
@@ -15,8 +16,10 @@ func main() {
 
 	- day1: [%s],
 	- day2: [%s],
+	- day3: [%s],
 	`,
 		day1.Response(),
 		day2.Response(),
+		day3.Response(),
 	)
 }
