@@ -11,6 +11,7 @@ import (
 	"github.com/gabrielradureaupw/adventofcode/2020/day6"
 	"github.com/gabrielradureaupw/adventofcode/2020/day7"
 	"github.com/gabrielradureaupw/adventofcode/2020/day8"
+	"github.com/gabrielradureaupw/adventofcode/2020/day9"
 )
 
 func main() {
@@ -27,6 +28,7 @@ func main() {
 	- day6: [%s],
 	- day7: [%s],
 	- day8: [%s],
+	- day9: [%s],
 	`,
 		day1.Response(),
 		day2.Response(),
@@ -36,5 +38,6 @@ func main() {
 		day6.Response(),
 		day7.Response(),
 		day8.Response(),
+		day9.Response(),
 	)
 }

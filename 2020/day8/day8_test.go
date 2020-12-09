@@ -23,6 +23,6 @@ acc +6
 		t.Fatalf("expected 5 got %d", ans1)
 	}
 	if ans2 != 8 {
-		t.Fatalf("expected 8 got %d", ans1)
+		t.Fatalf("expected 8 got %d", ans2)
 	}
 }
