@@ -4,6 +4,7 @@ import (
 	"fmt"
 
 	"github.com/gabrielradureaupw/adventofcode/2020/day1"
+	"github.com/gabrielradureaupw/adventofcode/2020/day10"
 	"github.com/gabrielradureaupw/adventofcode/2020/day2"
 	"github.com/gabrielradureaupw/adventofcode/2020/day3"
 	"github.com/gabrielradureaupw/adventofcode/2020/day4"
@@ -29,6 +30,7 @@ func main() {
 	- day7: [%s],
 	- day8: [%s],
 	- day9: [%s],
+	- day10: [%s],
 	`,
 		day1.Response(),
 		day2.Response(),
@@ -39,5 +41,6 @@ func main() {
 		day7.Response(),
 		day8.Response(),
 		day9.Response(),
+		day10.Response(),
 	)
 }
